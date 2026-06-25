@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('digimons', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('level');
-            $table->string('type');
-            $table->timestamps();
+        Schema::table('digimons', function (Blueprint $table) {
+            $table->string('img')->after('type');
         });
     }
 
@@ -25,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('digimons');
+        Schema::table('digimons', function (Blueprint $table) {
+            $table->dropColumn('img');
+        });
     }
 };

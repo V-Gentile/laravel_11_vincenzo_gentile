@@ -8,14 +8,14 @@ class PublicController extends Controller
 {
     public function home() {
     $digimon = [
-        (object) ['name' => 'Agumon', 'type' => 'Reptile', 'level' => 'Rookie', 'img' => 'agumon.png'],
-        (object) ['name' => 'Veemon', 'type' => 'Dragon', 'level' => 'Rookie', 'img' => 'veemon.png'],
-        (object) ['name' => 'Guilmon', 'type' => 'Dragon', 'level' => 'Rookie', 'img' => 'guilmon.png'],
-        (object) ['name' => 'Shoutmon', 'type' => 'Dragon', 'level' => 'Rookie', 'img' => 'shoutmon.png'],
+        ['mon' => 'Agumon', 'type' => 'Reptile', 'level' => 'Rookie', 'img' => 'agumon.png'],
+        ['mon' => 'Veemon', 'type' => 'Dragon', 'level' => 'Rookie', 'img' => 'veemon.png'],
+        ['mon' => 'Guilmon', 'type' => 'Dragon', 'level' => 'Rookie', 'img' => 'guilmon.png'],
+        ['mon' => 'Shoutmon', 'type' => 'Dragon', 'level' => 'Rookie', 'img' => 'shoutmon.png'],
     ];
 
     return view('home', ['home_digimon' => $digimon]);
-}
+    }
 
     public function chisiamo() {
     $users = [

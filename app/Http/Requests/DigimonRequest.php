@@ -11,32 +11,34 @@ class DigimonRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true; 
+        return true;
     }
 
     /**
      * Get the validation rules that apply to the request.
+     *
+     * @return array<string, ValidationRule|array<mixed>|string>
      */
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string', 'min:2'],
-            'level' => ['required', 'string', 'max:255'],
-            'type' => ['required', 'string', 'max:255'],
-            'img' => ['required', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'], 
+            'name' => 'required|min:4',
+            'level' => 'required',
+            'type' => 'required|min:3',
+            'img' => 'required|image'
         ];
     }
-
     public function messages()
     {
         return [
-            'name.required' => 'Il campo nome è obbligatorio.',
-            'name.min' => 'Il nome deve avere almeno 2 caratteri.',
-            'level.required' => 'Il campo livello è obbligatorio.',
-            'type.required' => 'Il campo tipo è obbligatorio.',
-            'img.required' => 'L\'immagine del Digimon è obbligatoria.',
-            'img.image' => 'Il file deve essere un\'immagine.',
-            'img.mimes' => 'L\'immagine deve essere in formato jpeg, png, jpg, gif o svg.',
+            'name.required' => 'Il nome è obbligatorio',
+            'name.min' => 'Per il nome almeno 4 caratteri',
+            'level.required' => 'Il livello è obbligatorio',
+            'type.required' => 'Il tipo è obbligatorio',
+            'type.min' => 'Per il tipo almeno 3 caratteri',
+            'img.required' => "L'immagine è obbligatoria",
+            'img.image' => 'Il file deve essere di tipo immagine'
+
         ];
     }
 }

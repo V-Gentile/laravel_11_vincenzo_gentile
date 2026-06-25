@@ -13,16 +13,18 @@ Route::get('/chi-siamo/dettagli/{name}',[PublicController::class, 'chisiamodetta
 
 Route::get('/servizi', [PublicController::class, 'servizi'])->name('servizi');
 
-Route::get('/digidex', [DigimonController::class, 'digidex'])->name('digimon.list');
+Route::get('/digimon/digidex', [DigimonController::class, 'digidex'])->name('digimon.list');
 
-Route::get('/digimon/crea', [DigimonController::class, 'crea'])->name('digimon.crea');
+Route::get('/digimon/dettagli/{mon}', [DigimonController::class, 'digimondettagli'])->name('digimon.dettagli');
 
-Route::post('/digimon/crea', [DigimonController::class, 'store'])->name('digimon.submit');
+Route::get('/digimon/crea', [DigimonController::class, 'create'])->name('digimon.crea');
 
-Route::get('/digimon/dettagli/{mon}', [DigimonController::class, 'mondettagli'])->name('digimon.dettagli');
+Route::post('/digimon/crea/submit', [DigimonController::class, 'store'])->name('digimon.submit');
 
-Route::get('/digimon/edit/{mon}', [DigimonController::class, 'edit'])->name('digimon.edit');
+Route::get('/digimon/digidettagli/{digimon}', [DigimonController::class, 'show'])->name('digimon.show');
 
-Route::put('/digimon/update/{mon}', [DigimonController::class, 'update'])->name('digimon.update');
+Route::get('/digimon/edit/{digimon}', [DigimonController::class, 'edit'])->name('digimon.edit');
 
-Route::delete('/digimon/elimina/{mon}', [DigimonController::class, 'destroy'])->name('digimon.destroy');
+Route::put('/digimon/update/{digimon}', [DigimonController::class, 'update'])->name('digimon.update');
+
+Route::delete('/digimon/delete/{digimon}', [DigimonController::class, 'destroy'])->name('digimon.delete');

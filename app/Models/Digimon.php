@@ -9,7 +9,7 @@ class Digimon extends Model
 {
     use HasFactory;
 
-
-protected $fillable = ['name', 'level', 'type', 'img', 'user_id'];
-
+    protected $fillable = [
+        'name', 'level', 'type', 'img',
+    ];
 }

@@ -33,7 +33,7 @@
                
                 @endauth
                 <li class="nav-item">
-                    <a class="nav-link fs-5" href="/digidex">DigiDex</a>
+                    <a class="nav-link fs-5" href="/digimon/digidex">DigiDex</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
